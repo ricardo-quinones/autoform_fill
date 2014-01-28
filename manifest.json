@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Handybook Prefill",
+  "version": "1.0.0",
+  "description": "Allows for easy prefilling of Handybook forms.",
+
+  "options_page": "options.html",
+
+  "icons": {
+    "128" : "icon-128.png"
+  },
+
+  "browser_action": {
+	"default_icon": "icon-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["jquery-1.11.0.min.js"]
+    }
+  ],
+
+  "background": { "page": "background.html" },
+  "permissions": [ "tabs", "http://*/*", "https://*/*", "storage" ],
+
+  "web_accessible_resources": [ "jquery-1.11.0.min.js", "contentscript.js" ]
+}
